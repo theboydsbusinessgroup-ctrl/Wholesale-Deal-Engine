@@ -21,8 +21,17 @@ The Tax Office listing showed an October 6, 2026 scheduled sale when observed Oc
 | 11226 Sagecanyon Dr, 77089; account `1031760000007` | Cause `202467952`; judgment years 2022–2025; listed minimum bid $35,209.10 | $219,523 | Recheck live sale status and delinquent statement; verify recorded title and whether a direct seller channel exists |
 | 8106 Blooming Meadow Ln, 77016; account `1305950070011` | Cause `202535779`; judgment years 2023–2025; listed minimum bid $23,604.83 | $242,365 | Same, plus property type, condition and occupancy |
 
+### Account-specific tax statements checked October 1
+
+| Parcel | Statement current as of September 30 | Tax years displayed | Mailing/authority finding |
+| --- | ---: | --- | --- |
+| [Sagecanyon](https://www.hctax.net/property/listings/saledetail?account=1031760000007) | $11,821.55 listed total due | 2023–2025 | Statement labels assessed owner as an **estate**; authority, probate and current deed need review. Tax-statement mailing address matches situs; no absentee signal from this record. |
+| [Blooming Meadow](https://www.hctax.net/property/listings/saledetail?account=1305950070011) | $12,381.92 listed total due | 2023–2025 | Tax-statement mailing address matches situs; no absentee signal from this record. |
+
+These statements are dated snapshots, not final payoff quotes. Sagecanyon's displayed jurisdictions omit a school district, and neither statement proves every lien or debt has been accounted for. The sale list's judgment-year range and minimum bid do not reconcile to the account page's displayed years and total due; do not infer equity from either figure. Recheck sale status and obtain an official payoff and title work before drawing financial conclusions.
+
 The listed minimum bids are **not asking prices**. Adjudged or appraised values are **not ARV or equity**. The Tax Office says entries can be removed or canceled before sale and cautions that title, liens, location, and condition require independent diligence. `examples/harris-county-record-signals.json` preserves the observed event and unknown fields; `reports/harris-county-record-signals.json` shows both `REVIEW_REQUIRED`, zero accepted comps and no economics. The engine blocks a `county_record_signal` even if someone later enters a tempting auction figure as an asking price. No outreach, bidding, or offer has occurred.
 
-Next pass: recheck the live sale list and tax statement by account, inspect the relevant recorded instruments and notice, confirm parcel type/occupancy, then seek a legitimate direct seller channel. Only after seller authority, repair scope, verified sold comps, title review, no-capital structure and funded buyer evidence should a lead enter underwriting. A filed notice or tax balance by itself is not a substitute for any of these.
+Next pass: recheck the live sale list immediately before October 6, inspect the relevant recorded instruments and case papers, confirm parcel type/occupancy, then seek a legitimate direct seller channel. Sagecanyon also needs estate authority verification. Only after seller authority, repair scope, verified sold comps, title review, no-capital structure and funded buyer evidence should a lead enter underwriting. A filed notice or tax balance by itself is not a substitute for any of these.
 
 Free-tool preflight: [gboogy/hcad-property-taxes](https://github.com/gboogy/hcad-property-taxes) is a 2020 Selenium scraper without a declared license and does not cover the current official sale/foreclosure workflow. It was reviewed but not installed; the existing direct HCAD GIS reader and official county portals are sufficient for this first research pass.

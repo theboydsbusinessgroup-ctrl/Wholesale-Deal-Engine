@@ -24,7 +24,21 @@
       "minimum_bid": 35209.1,
       "adjudged_value": 228080,
       "hcad_2026_appraised_value": 219523,
-      "note": "Sale listing can change or be canceled. Minimum bid and adjudged/appraised values are not seller asking price, equity, ARV, or assignable contract terms."
+      "note": "Sale listing can change or be canceled. Minimum bid and adjudged/appraised values are not seller asking price, equity, ARV, or assignable contract terms.",
+      "tax_statement": {
+        "url": "https://www.hctax.net/property/listings/saledetail?account=1031760000007",
+        "current_as_of": "2026-09-30",
+        "observed_at": "2026-10-01",
+        "listed_total_due": 11821.55,
+        "listed_years": [
+          2023,
+          2024,
+          2025
+        ],
+        "mailing_matches_situs_on_statement": true,
+        "assessed_owner_label": "estate_on_tax_statement",
+        "note": "Statement lists seven jurisdictions; school tax or other obligations are not established by this page. This dated page is not a final payoff; recheck directly with the Tax Office."
+      }
     },
     "assumptions": {},
     "checks": {},
@@ -55,7 +69,21 @@
       "minimum_bid": 23604.83,
       "adjudged_value": 256259,
       "hcad_2026_appraised_value": 242365,
-      "note": "Sale listing can change or be canceled. Minimum bid and adjudged/appraised values are not seller asking price, equity, ARV, or assignable contract terms."
+      "note": "Sale listing can change or be canceled. Minimum bid and adjudged/appraised values are not seller asking price, equity, ARV, or assignable contract terms.",
+      "tax_statement": {
+        "url": "https://www.hctax.net/property/listings/saledetail?account=1305950070011",
+        "current_as_of": "2026-09-30",
+        "observed_at": "2026-10-01",
+        "listed_total_due": 12381.92,
+        "listed_years": [
+          2023,
+          2024,
+          2025
+        ],
+        "mailing_matches_situs_on_statement": true,
+        "assessed_owner_label": "individual_on_tax_statement",
+        "note": "Statement lists eight jurisdictions; other liens and charges remain unverified. This dated page is not a final payoff; recheck directly with the Tax Office."
+      }
     },
     "assumptions": {},
     "checks": {},
