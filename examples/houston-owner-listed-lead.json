@@ -60,6 +60,26 @@
           "url": "https://www.har.com/homedetail/13706-sablesprings-ln-houston-tx-77014/3549809",
           "observed_at": "2026-10-01"
         }
+      },
+      {
+        "id": "har-85904798",
+        "address": "2231 Laurel Forest Way, Houston, TX 77014",
+        "property_type": "single_family",
+        "zip": "77014",
+        "sqft": 2184,
+        "built": 2000,
+        "lot_sqft": 12023,
+        "sold_at": "2026-09-04",
+        "sold_price_range": [
+          285001,
+          325000
+        ],
+        "renovation_description": "Listing reports fresh interior paint and new flooring; extent of updates is less clear than fully remodeled candidates.",
+        "comparability_note": "Secondary lead: substantially larger lot than Hallfield and newer construction; verify condition and adjustments before use.",
+        "source": {
+          "url": "https://www.har.com/web/harhar/sold_detail/85904798",
+          "observed_at": "2026-10-01"
+        }
       }
     ]
   }
