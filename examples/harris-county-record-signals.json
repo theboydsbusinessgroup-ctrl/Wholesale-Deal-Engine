@@ -1,0 +1,64 @@
+[
+  {
+    "id": "hctax-2026-10-06-1031760000007",
+    "address": "11226 Sagecanyon Dr, Houston, TX 77089",
+    "state": "TX",
+    "county": "Harris",
+    "zip": "77089",
+    "property_type": "single_family_unverified",
+    "parcel_account": "1031760000007",
+    "sqft": null,
+    "asking_price": null,
+    "seller_channel": "county_record_signal",
+    "requires_acquisition": null,
+    "source": {
+      "url": "https://www.hctax.net/Property/Listings/TaxSaleListing.cshtml",
+      "observed_at": "2026-10-01"
+    },
+    "county_record": {
+      "type": "delinquent_tax_sale_listing",
+      "scheduled_sale": "2026-10-06",
+      "listing_status_at_observation": "for_sale",
+      "cause_number": "202467952",
+      "tax_years_in_judgment": "2022\u20132025",
+      "minimum_bid": 35209.1,
+      "adjudged_value": 228080,
+      "hcad_2026_appraised_value": 219523,
+      "note": "Sale listing can change or be canceled. Minimum bid and adjudged/appraised values are not seller asking price, equity, ARV, or assignable contract terms."
+    },
+    "assumptions": {},
+    "checks": {},
+    "comps": []
+  },
+  {
+    "id": "hctax-2026-10-06-1305950070011",
+    "address": "8106 Blooming Meadow Ln, Houston, TX 77016",
+    "state": "TX",
+    "county": "Harris",
+    "zip": "77016",
+    "property_type": "single_family_unverified",
+    "parcel_account": "1305950070011",
+    "sqft": null,
+    "asking_price": null,
+    "seller_channel": "county_record_signal",
+    "requires_acquisition": null,
+    "source": {
+      "url": "https://www.hctax.net/Property/Listings/TaxSaleListing.cshtml",
+      "observed_at": "2026-10-01"
+    },
+    "county_record": {
+      "type": "delinquent_tax_sale_listing",
+      "scheduled_sale": "2026-10-06",
+      "listing_status_at_observation": "for_sale",
+      "cause_number": "202535779",
+      "tax_years_in_judgment": "2023\u20132025",
+      "minimum_bid": 23604.83,
+      "adjudged_value": 256259,
+      "hcad_2026_appraised_value": 242365,
+      "note": "Sale listing can change or be canceled. Minimum bid and adjudged/appraised values are not seller asking price, equity, ARV, or assignable contract terms."
+    },
+    "assumptions": {},
+    "checks": {},
+    "comps": []
+  }
+]

@@ -35,6 +35,8 @@ def screen(lead, buyers=(), today=None):
         blockers.append('outside configured Houston-area territory')
     if lead.get('seller_channel') == 'retail_inventory':
         blockers.append('retail inventory channel; wholesale acquisition edge unverified')
+    if lead.get('seller_channel') == 'county_record_signal':
+        blockers.append('county record is a research signal; direct seller channel and assignable interest unverified')
     if not sourced(lead.get('source'), today):
         blockers.append('missing or stale listing source')
     for key in ('sqft', 'asking_price'):
