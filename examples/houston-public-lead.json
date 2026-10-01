@@ -1,0 +1,25 @@
+[
+  {
+    "id": "har-60157671",
+    "address": "12011 Greencanyon Dr, Houston, TX 77044",
+    "state": "TX",
+    "county": "Harris",
+    "zip": "77044",
+    "property_type": "single_family",
+    "sqft": 1136,
+    "asking_price": 119999,
+    "source": {
+      "url": "https://www.har.com/homedetail/12011-greencanyon-dr-houston-tx-77044/3432585",
+      "observed_at": "2026-10-01"
+    },
+    "listing_status": "active",
+    "notes": [
+      "Public listing research lead; not off-market or a qualified wholesale opportunity.",
+      "Repair condition is listing-reported, not independently inspected."
+    ],
+    "requires_acquisition": null,
+    "assumptions": {},
+    "checks": {},
+    "comps": []
+  }
+]

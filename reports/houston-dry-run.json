@@ -1,0 +1,39 @@
+[
+  {
+    "lead_id": "har-60157671",
+    "address": "12011 Greencanyon Dr, Houston, TX 77044",
+    "status": "REVIEW_REQUIRED",
+    "as_of": "2026-10-01",
+    "accepted_comp_count": 0,
+    "economics": null,
+    "buyer_matches": [],
+    "blockers": [
+      "missing assumption: repairs_low",
+      "missing assumption: repairs_high",
+      "missing assumption: repair_contingency",
+      "missing assumption: buyer_profit",
+      "missing assumption: holding_costs",
+      "missing assumption: closing_costs",
+      "missing assumption: selling_costs",
+      "missing assumption: assignment_fee",
+      "missing assumption: wholesaler_costs",
+      "missing assumption: capital_exposure",
+      "missing or stale repair_evidence",
+      "missing or stale cost_evidence",
+      "no-acquisition structure not verified",
+      "need three distinct verified recent renovated sold comps",
+      "unverified ownership",
+      "unverified title",
+      "unverified flood",
+      "unverified assignment_rights",
+      "unverified seller_disclosure",
+      "unverified buyer_disclosure",
+      "unverified counsel_review",
+      "unverified contact_eligibility",
+      "no verified funded buyer match"
+    ],
+    "warnings": [
+      "Research output only; no offer, outreach, contract or guaranteed valuation"
+    ]
+  }
+]

@@ -59,6 +59,15 @@ The engine must not:
 
 ## Build status
 
-Phase 0: repository initialized.
+Phase 1: runnable, local research-screening MVP. Python 3.10+; no paid API or additional dependencies.
 
-Next: system specification, data model, scoring model, source adapters, workflow state machine, compliance rule engine, buyer CRM, transaction ledger, and dashboard/API contracts.
+```bash
+python -m unittest discover -s tests -v
+python -m wholesale examples/houston-public-lead.json
+# Optional buyer evidence file:
+python -m wholesale data/leads.json --buyers data/buyers.json
+```
+
+Outputs a JSON review queue and appends input snapshots, SHA-256 hashes and decisions to a local SQLite event ledger. Live records belong in ignored `data/`, never this public repository. The ledger is append-only through this CLI, not tamper-proof storage.
+
+See `docs/MVP.md` for input requirements, limitations, and next steps. `reports/houston-dry-run.json` records the actual first public lead run, with unknowns preserved. No qualified opportunity or income is claimed.
