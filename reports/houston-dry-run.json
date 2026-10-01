@@ -7,7 +7,21 @@
     "accepted_comp_count": 0,
     "economics": null,
     "buyer_matches": [],
+    "parcel_research": {
+      "account": "1111070000003",
+      "tax_year": "2026",
+      "tax_roll_owner": "SWE CASAS LLC",
+      "appraised_value": 98898.0,
+      "market_value": 98898.0,
+      "active_account": true,
+      "source": {
+        "url": "https://www.gis.hctx.net/arcgis/rest/services/HCAD/Parcels/MapServer/0/query?where=acct_num%3D%271111070000003%27&outFields=acct_num%2Ctax_year%2Cowner_name_1%2Csite_str_num%2Csite_str_name%2Csite_zip%2Ctotal_appraised_val%2Ctotal_market_val%2Cnew_owner_date%2CactiveAccount_flag&returnGeometry=false&f=json",
+        "observed_at": "2026-10-01"
+      },
+      "note": "Tax-roll ownership and assessed values are informational; verify deed, title, and sale comps independently."
+    },
     "blockers": [
+      "retail inventory channel; wholesale acquisition edge unverified",
       "missing assumption: repairs_low",
       "missing assumption: repairs_high",
       "missing assumption: repair_contingency",
