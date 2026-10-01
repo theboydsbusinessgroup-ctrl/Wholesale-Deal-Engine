@@ -26,9 +26,15 @@ class EngineTests(unittest.TestCase):
     def test_explicit_economics_and_owner_boundary(self):
         r=screen(fixture(),BUYERS,TODAY)
         self.assertEqual(r['economics']['max_contract_price'],93000)
+        self.assertEqual(r['economics']['buyer_headroom_after_ask'],10000)
+        self.assertEqual(r['economics']['headroom_after_target_fee_and_costs'],-2000)
+        self.assertEqual(r['economics']['target_fee_net_of_wholesaler_costs'],8000)
         self.assertIn('asking price exceeds conservative maximum contract price',r['blockers'])
         d=fixture(); d['asking_price']=85000
         self.assertEqual(screen(d,BUYERS,TODAY)['status'],'READY_FOR_OWNER_REVIEW')
+    def test_fee_must_cover_wholesaler_costs(self):
+        d=fixture();d['asking_price']=85000;d['assumptions']['assignment_fee']=1000
+        self.assertIn('target assignment fee does not cover wholesaler costs', screen(d,BUYERS,TODAY)['blockers'])
     def test_missing_data_not_qualified(self):
         self.assertIsNone(screen({'id':'x','address':'x'},today=TODAY)['economics'])
     def test_duplicate_active_stale_wrong_zip_comps(self):

@@ -84,18 +84,22 @@ def screen(lead, buyers=(), today=None):
         max_contract = round(buyer_max - costs['assignment_fee'] - costs['wholesaler_costs'], 2)
         economics = {'arv_low': round(low,2), 'arv_base': round(base,2), 'arv_high': round(high,2),
                      'buyer_max_all_in_assignment_price': buyer_max, 'max_contract_price': max_contract,
-                     'spread_at_ask_before_wholesaler_costs': round(buyer_max-lead.get('asking_price',0),2),
-                     'net_spread_at_ask': round(buyer_max-lead.get('asking_price',0)-costs['wholesaler_costs'],2)}
+                     'buyer_headroom_after_ask': round(buyer_max-lead.get('asking_price',0),2),
+                     'headroom_after_target_fee_and_costs': round(buyer_max-lead.get('asking_price',0)-costs['assignment_fee']-costs['wholesaler_costs'],2),
+                     'target_assignment_fee': costs['assignment_fee'],
+                     'target_fee_net_of_wholesaler_costs': round(costs['assignment_fee']-costs['wholesaler_costs'],2)}
         if max_contract <= 0: blockers.append('nonpositive maximum contract price')
         if lead.get('asking_price') and lead['asking_price'] > max_contract:
             blockers.append('asking price exceeds conservative maximum contract price')
         if high > low * 1.25: blockers.append('comp dispersion needs analyst review')
+        if costs['assignment_fee'] <= costs['wholesaler_costs']:
+            blockers.append('target assignment fee does not cover wholesaler costs')
     matches = []
     if economics and lead.get('asking_price'):
         for b in buyers:
             if (b.get('verified') is True and sourced(b.get('proof_of_funds'), today)
                 and lead.get('zip') in b.get('zips', []) and lead.get('property_type') in b.get('property_types', [])
-                and number(b.get('max_price',0), 'buyer max price') >= lead['asking_price']+costs['assignment_fee']+costs['wholesaler_costs']
+                and number(b.get('max_price',0), 'buyer max price') >= lead['asking_price']+costs['assignment_fee']
                 and number(b.get('max_repairs',0), 'buyer max repairs') >= costs['repairs_high']+costs['repair_contingency']):
                 matches.append(b['id'])
     if not matches: blockers.append('no verified funded buyer match')

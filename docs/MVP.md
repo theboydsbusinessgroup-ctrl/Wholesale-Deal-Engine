@@ -5,7 +5,7 @@
 - Houston-area county allowlist; does not implement a geographic radius.
 - Three distinct verified renovated closed sales, same ZIP/type, within 180 days and 25% of subject size. These are basic filters; an analyst must still review location, condition and adjustments.
 - Low/base/high comp-price-per-square-foot scenarios. These are not statistical confidence intervals or appraisals.
-- Conservative explicit MAO: low ARV less high repairs, repair contingency, buyer profit, holding, closing and selling costs, target assignment fee and wholesaler costs.
+- Conservative explicit MAO: low ARV less high repairs, repair contingency, buyer profit, holding, closing and selling costs, target assignment fee and wholesaler costs. The buyer price test uses asking price plus assignment fee; wholesaler costs reduce fee net, not buyer purchase price. Fee headroom is distinguished from actual fee income.
 - Buyer fit with evidence of funds, ZIP/type, price and repair criteria.
 - Unknown/stale evidence blocks readiness. Positive capital exposure requires separate authorization.
 - Research results and input snapshots appended to SQLite with hashes.
@@ -31,3 +31,5 @@ TREC source retrieved 2026-10-01: https://www.trec.texas.gov/article/sale-equita
 ## GitHub-first preflight
 Query: site:github.com real estate underwriting python wholesale calculator.
 Reviewed dealcalcpro2026/dealcalc-core at 876db9c4fcc0ad7275d3fd58e72cda12cbe6d4e1: MIT, pure arithmetic, minimal maintenance history. Used its MAO function with rule_pct=100 and explicit costs; retained license and provenance. No paid service, MCP dependency, installer or external inference required. Other institutional commercial underwriting candidates do not fit this single-family assignment screening task.
+
+Public HCAD assessment data can enrich parcel attributes but cannot substitute for verified renovated closed-sale prices. Github-first candidates reviewed: RafaelPinto/hcad_pred (appraisal data), mosswild/res_prop_mcp (government/portal aggregation), HomeHarvest (portal scraping). None was installed for this phase because they do not reliably provide authorized verified Houston sold comps with condition evidence.
