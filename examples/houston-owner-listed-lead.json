@@ -23,6 +23,44 @@
     ],
     "assumptions": {},
     "checks": {},
-    "comps": []
+    "comps": [],
+    "comp_candidates": [
+      {
+        "id": "har-35086133",
+        "address": "13815 Fair Park Dr, Houston, TX 77014",
+        "property_type": "single_family",
+        "zip": "77014",
+        "sqft": 2406,
+        "built": 1993,
+        "sold_at": "2026-05-15",
+        "sold_price_range": [
+          250001,
+          285000
+        ],
+        "renovation_description": "Listing claims fully remodeled and new roof; independent inspection not obtained.",
+        "source": {
+          "url": "https://www.har.com/homedetail/13815-fair-park-dr-houston-tx-77014/9358938",
+          "observed_at": "2026-10-01"
+        }
+      },
+      {
+        "id": "har-93472000",
+        "address": "13706 Sablesprings Ln, Houston, TX 77014",
+        "property_type": "single_family",
+        "zip": "77014",
+        "sqft": 2230,
+        "built": 1992,
+        "sold_at": "2026-05-04",
+        "sold_price_range": [
+          250001,
+          285000
+        ],
+        "renovation_description": "Listing claims fully remodeled with new roof, flooring, kitchen, bathrooms; independent inspection not obtained.",
+        "source": {
+          "url": "https://www.har.com/homedetail/13706-sablesprings-ln-houston-tx-77014/3549809",
+          "observed_at": "2026-10-01"
+        }
+      }
+    ]
   }
 ]

@@ -13,7 +13,7 @@
 ## Input
 See examples/houston-public-lead.json. Assumptions must include every COSTS field listed in wholesale/engine.py; zero must be explicit. All currency is USD. `repairs_low <= repairs_high`. Cost evidence should link to an accessible reviewed budget; repair evidence to an inspection or estimate. A source object has `url` and ISO `observed_at`. Checked evidence additionally has `verified: true`. Evidence freshness is 30 days.
 
-Comps need id, sold_price, sqft, sold_at, status=sold, ZIP, property_type, renovated=true, verified=true and source. No asking price can serve as a sold comp. Buyers need id, verified=true, proof_of_funds source object, zips, property_types, max_price and max_repairs.
+Accepted comps need id, exact sold_price, sqft, sold_at, status=sold, ZIP, property_type, renovated=true, verified=true and source. Public sold-price ranges may be retained as `comp_candidates` for research but never enter ARV. No asking price can serve as a sold comp. Buyers need id, verified=true, proof_of_funds source object, zips, property_types, max_price and max_repairs.
 
 Checks: ownership, title, flood, assignment_rights, seller_disclosure, buyer_disclosure, counsel_review, contact_eligibility. These are operator attestations with references, not automatic legal determinations. Requires_acquisition must be false; capital_exposure defaults to unknown and must be explicitly supplied. Unknown earnest money or option liabilities cannot be assumed zero.
 
