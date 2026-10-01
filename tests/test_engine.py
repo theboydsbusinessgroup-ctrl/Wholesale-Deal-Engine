@@ -41,6 +41,12 @@ class EngineTests(unittest.TestCase):
         self.assertEqual(r['unpriced_comp_candidates'],3)
         self.assertEqual(r['accepted_comp_count'],0)
         self.assertIsNone(r['economics'])
+    def test_county_record_signal_cannot_become_offer_from_auction_terms(self):
+        d=fixture();d['asking_price']=85000;d['seller_channel']='county_record_signal'
+        d['county_record']={'sale_type':'tax_sale','minimum_bid':20000,'adjudged_value':250000}
+        r=screen(d,BUYERS,TODAY)
+        self.assertEqual(r['status'],'REVIEW_REQUIRED')
+        self.assertIn('county record is a research signal; direct seller channel and assignable interest unverified',r['blockers'])
     def test_missing_data_not_qualified(self):
         self.assertIsNone(screen({'id':'x','address':'x'},today=TODAY)['economics'])
     def test_duplicate_active_stale_wrong_zip_comps(self):

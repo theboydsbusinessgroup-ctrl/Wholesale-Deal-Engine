@@ -65,6 +65,7 @@ Phase 1: runnable, local research-screening MVP. Python 3.10+; no paid API or ad
 python -m unittest discover -s tests -v
 python -m wholesale examples/houston-public-lead.json --enrich-hcad
 python -m wholesale examples/houston-owner-listed-lead.json --enrich-hcad --output data/hallfield-screen.json
+python -m wholesale examples/harris-county-record-signals.json --output data/county-screen.json
 # Optional buyer evidence file:
 python -m wholesale data/leads.json --buyers data/buyers.json
 ```
@@ -72,3 +73,5 @@ python -m wholesale data/leads.json --buyers data/buyers.json
 Outputs a JSON review queue and appends input snapshots, SHA-256 hashes and decisions to a local SQLite event ledger. Live records belong in ignored `data/`, never this public repository. The ledger is append-only through this CLI, not tamper-proof storage.
 
 See `docs/MVP.md` for input requirements, limitations, and next steps. `reports/houston-dry-run.json` records the actual first public lead run, with unknowns preserved. No qualified opportunity or income is claimed.
+
+See `docs/COUNTY_RECORDS.md` for official Harris County tax, foreclosure, deed and absentee-owner research sources and the first two parcel-matched tax-sale signals. County records are discovery evidence, not offer prices or verified deal economics.
