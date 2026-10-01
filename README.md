@@ -64,6 +64,7 @@ Phase 1: runnable, local research-screening MVP. Python 3.10+; no paid API or ad
 ```bash
 python -m unittest discover -s tests -v
 python -m wholesale examples/houston-public-lead.json --enrich-hcad
+python -m wholesale examples/houston-owner-listed-lead.json --enrich-hcad --output data/hallfield-screen.json
 # Optional buyer evidence file:
 python -m wholesale data/leads.json --buyers data/buyers.json
 ```
