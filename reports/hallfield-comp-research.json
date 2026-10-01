@@ -7,7 +7,7 @@
     "accepted_comp_count": 0,
     "economics": null,
     "buyer_matches": [],
-    "unpriced_comp_candidates": 2,
+    "unpriced_comp_candidates": 3,
     "parcel_research": null,
     "blockers": [
       "missing assumption: repairs_low",
