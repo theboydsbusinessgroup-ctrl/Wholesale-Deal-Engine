@@ -108,4 +108,4 @@ def screen(lead, buyers=(), today=None):
     warnings.append('Research output only; no offer, outreach, contract or guaranteed valuation')
     return {'lead_id': lead['id'], 'address': lead['address'], 'status': 'REVIEW_REQUIRED' if blockers else 'READY_FOR_OWNER_REVIEW',
             'as_of': today.isoformat(), 'accepted_comp_count': len(comps), 'economics': economics,
-            'buyer_matches': matches, 'parcel_research': lead.get('parcel_research'), 'blockers': blockers, 'warnings': warnings}
+            'buyer_matches': matches, 'unpriced_comp_candidates': len(lead.get('comp_candidates', [])), 'parcel_research': lead.get('parcel_research'), 'blockers': blockers, 'warnings': warnings}

@@ -12,3 +12,14 @@ HCAD official GIS query matched account 1160050110060 to 13827 HALLFIELD and ZIP
 Before advancing Hallfield: verify actual seller authority and occupancy, obtain interior access and written repair scope, three verified renovated closed-sale comps near the subject, title/HOA/flood findings, buyer proof of funds and deal costs. The public listing and tax roll alone cannot establish an assignable no-capital transaction. No outreach or offer has been sent.
 
 Greencanyon sources: https://www.har.com/homedetail/12011-greencanyon-dr-houston-tx-77044/3432585 and https://www.swehomes.com/property/12011-greencanyon-dr . The marketable retail inventory is a less useful wholesale test than an owner-listed as-is property.
+
+## Hallfield comp research (unpriced)
+
+| Address | Sold date | Size | Public sold-price range | Renovation signal |
+| --- | --- | ---: | ---: | --- |
+| [13815 Fair Park Dr](https://www.har.com/homedetail/13815-fair-park-dr-houston-tx-77014/9358938) | May 15, 2026 | 2,406 sqft | $250,001–$285,000 | Listing says fully remodeled, new roof |
+| [13706 Sablesprings Ln](https://www.har.com/homedetail/13706-sablesprings-ln-houston-tx-77014/3549809) | May 4, 2026 | 2,230 sqft | $250,001–$285,000 | Listing says fully remodeled, new roof |
+
+Both are closed single-family sales in ZIP 77014, near the subject's 2,272 sqft and 1991 construction. Their descriptions are seller/listing claims. Distances, renovation quality, concessions, financing, and exact closing prices need confirmation. HAR displays ranges publicly and directs visitors to a connected agent for sold prices. Do not substitute list prices, range midpoints, appraisals, or AVMs for exact closed-sale data. The engine stores these under `comp_candidates`; only verified `comps` with exact `sold_price` enter ARV. A third suitable renovated sale and a written repair estimate are still needed.
+
+Data path: an authorized HAR/MLS user or real estate professional can provide closing prices and a comparative market analysis; record the sources and review adjustments before changing candidate status. This research packet does not establish a maximum offer or margin.

@@ -35,6 +35,12 @@ class EngineTests(unittest.TestCase):
     def test_fee_must_cover_wholesaler_costs(self):
         d=fixture();d['asking_price']=85000;d['assumptions']['assignment_fee']=1000
         self.assertIn('target assignment fee does not cover wholesaler costs', screen(d,BUYERS,TODAY)['blockers'])
+    def test_sold_price_ranges_never_count_as_exact_comps(self):
+        d=fixture();d['comps']=[];d['comp_candidates']=[{'sold_price_range':[250001,285000]}]*3
+        r=screen(d,BUYERS,TODAY)
+        self.assertEqual(r['unpriced_comp_candidates'],3)
+        self.assertEqual(r['accepted_comp_count'],0)
+        self.assertIsNone(r['economics'])
     def test_missing_data_not_qualified(self):
         self.assertIsNone(screen({'id':'x','address':'x'},today=TODAY)['economics'])
     def test_duplicate_active_stale_wrong_zip_comps(self):
