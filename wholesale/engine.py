@@ -33,6 +33,8 @@ def screen(lead, buyers=(), today=None):
     blockers, warnings = [], []
     if lead.get('state') != 'TX' or lead.get('county') not in ('Harris', 'Fort Bend', 'Montgomery', 'Brazoria', 'Galveston'):
         blockers.append('outside configured Houston-area territory')
+    if lead.get('seller_channel') == 'retail_inventory':
+        blockers.append('retail inventory channel; wholesale acquisition edge unverified')
     if not sourced(lead.get('source'), today):
         blockers.append('missing or stale listing source')
     for key in ('sqft', 'asking_price'):
@@ -106,4 +108,4 @@ def screen(lead, buyers=(), today=None):
     warnings.append('Research output only; no offer, outreach, contract or guaranteed valuation')
     return {'lead_id': lead['id'], 'address': lead['address'], 'status': 'REVIEW_REQUIRED' if blockers else 'READY_FOR_OWNER_REVIEW',
             'as_of': today.isoformat(), 'accepted_comp_count': len(comps), 'economics': economics,
-            'buyer_matches': matches, 'blockers': blockers, 'warnings': warnings}
+            'buyer_matches': matches, 'parcel_research': lead.get('parcel_research'), 'blockers': blockers, 'warnings': warnings}

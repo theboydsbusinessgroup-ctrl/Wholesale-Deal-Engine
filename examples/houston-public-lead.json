@@ -15,11 +15,18 @@
     "listing_status": "active",
     "notes": [
       "Public listing research lead; not off-market or a qualified wholesale opportunity.",
-      "Repair condition is listing-reported, not independently inspected."
+      "Repair condition is listing-reported, not independently inspected.",
+      "SWE Homes directly markets the same property and owner financing; retail inventory channel is a weak wholesale prospect."
     ],
     "requires_acquisition": null,
     "assumptions": {},
     "checks": {},
-    "comps": []
+    "comps": [],
+    "parcel_account": "1111070000003",
+    "seller_channel": "retail_inventory",
+    "seller_site": {
+      "url": "https://www.swehomes.com/property/12011-greencanyon-dr",
+      "observed_at": "2026-10-01"
+    }
   }
 ]

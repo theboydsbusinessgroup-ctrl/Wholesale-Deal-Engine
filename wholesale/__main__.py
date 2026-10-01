@@ -6,16 +6,25 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from .engine import screen
+from .hcad import lookup
 
 def main():
     p = argparse.ArgumentParser(description='Screen sourced property leads; never sends messages or executes transactions.')
     p.add_argument('input', type=Path)
     p.add_argument('--buyers', type=Path)
+    p.add_argument('--enrich-hcad', action='store_true', help='Read official HCAD GIS for leads with a 13-digit parcel_account')
     p.add_argument('--db', type=Path, default=Path('data/pipeline.sqlite'))
     p.add_argument('--output', type=Path, default=Path('data/screening.json'))
     a = p.parse_args()
     leads = json.loads(a.input.read_text())
     buyers = json.loads(a.buyers.read_text()) if a.buyers else []
+    if a.enrich_hcad:
+        for lead in leads:
+            if lead.get('county') == 'Harris' and lead.get('parcel_account'):
+                try:
+                    lead['parcel_research'] = lookup(lead['parcel_account'], lead['address'], lead['zip'])
+                except (ValueError, OSError, TimeoutError) as error:
+                    lead['parcel_research_error'] = str(error)
     results = [screen(lead, buyers) for lead in leads]
     a.db.parent.mkdir(parents=True, exist_ok=True)
     with sqlite3.connect(a.db) as conn:
