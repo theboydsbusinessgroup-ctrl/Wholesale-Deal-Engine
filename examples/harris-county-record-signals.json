@@ -38,7 +38,24 @@
         "mailing_matches_situs_on_statement": true,
         "assessed_owner_label": "estate_on_tax_statement",
         "note": "Statement lists seven jurisdictions; school tax or other obligations are not established by this page. This dated page is not a final payoff; recheck directly with the Tax Office."
-      }
+      },
+      "recorded_index_source": "https://cclerk.hctx.net/applications/websearch/RP.aspx",
+      "index_checked_at": "2026-10-01",
+      "document_images_reviewed": false,
+      "case_papers_reviewed": false,
+      "recorded_index_hits": [
+        {
+          "file_number": "P996181",
+          "filed_at": "1994-08-04",
+          "index_type": "DEED",
+          "legal_match": "Sagemont Sec 10 Lot 7 Block 65",
+          "note": "Historical deed index hit; current title and estate authority unverified."
+        }
+      ],
+      "review_flags": [
+        "estate_authority_unverified",
+        "current_title_unverified"
+      ]
     },
     "assumptions": {},
     "checks": {},
@@ -83,7 +100,31 @@
         "mailing_matches_situs_on_statement": true,
         "assessed_owner_label": "individual_on_tax_statement",
         "note": "Statement lists eight jurisdictions; other liens and charges remain unverified. This dated page is not a final payoff; recheck directly with the Tax Office."
-      }
+      },
+      "recorded_index_source": "https://cclerk.hctx.net/applications/websearch/RP.aspx",
+      "index_checked_at": "2026-10-01",
+      "document_images_reviewed": false,
+      "case_papers_reviewed": false,
+      "recorded_index_hits": [
+        {
+          "file_number": "RP-2019-417959",
+          "filed_at": "2019-09-20",
+          "index_type": "W/D",
+          "legal_match": "Wayside Village Sec 2 Lot 11 Block 3",
+          "note": "Warranty deed index hit, document not reviewed."
+        },
+        {
+          "file_number": "RP-2026-263706",
+          "filed_at": "2026-07-01",
+          "index_type": "L/P",
+          "legal_match": "Wayside Village Sec 2 Lot 11 Block 3",
+          "note": "Index identifies lis pendens filed by Wayside Homeowners Association. Claim, release, current status and title effect unverified."
+        }
+      ],
+      "review_flags": [
+        "hoa_lis_pendens_index_hit",
+        "title_and_hoa_review_required"
+      ]
     },
     "assumptions": {},
     "checks": {},

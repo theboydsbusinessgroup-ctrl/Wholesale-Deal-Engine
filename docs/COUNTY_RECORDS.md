@@ -30,8 +30,20 @@ The Tax Office listing showed an October 6, 2026 scheduled sale when observed Oc
 
 These statements are dated snapshots, not final payoff quotes. Sagecanyon's displayed jurisdictions omit a school district, and neither statement proves every lien or debt has been accounted for. The sale list's judgment-year range and minimum bid do not reconcile to the account page's displayed years and total due; do not infer equity from either figure. Recheck sale status and obtain an official payoff and title work before drawing financial conclusions.
 
+### Recorded-instrument index checked October 1
+
+The [County Clerk real-property index](https://cclerk.hctx.net/applications/websearch/RP.aspx) returned these matches when searched by assessed owner and cross-checked against the exact legal lot/block from the tax-sale listing:
+
+| Parcel | Indexed document | What was visible |
+| --- | --- | --- |
+| Sagecanyon | `P996181`, deed, filed August 4, 1994 | Sagemont Sec 10, Lot 7, Block 65. Historical chain clue only; current deed and estate authority remain unverified. |
+| Blooming Meadow | `RP-2019-417959`, warranty deed, filed September 20, 2019 | Wayside Village Sec 2, Lot 11, Block 3. The index is not a title commitment. |
+| Blooming Meadow | `RP-2026-263706`, **L/P (lis pendens)**, filed July 1, 2026 | The index names Wayside Homeowners Association as filer and matches Wayside Village Sec 2, Lot 11, Block 3. Whether the underlying claim is outstanding, its amount, any release, and its effect on title are unknown. **Hold for HOA/title review.** |
+
+The County Clerk document viewer requires a free registered login; the index was visible anonymously, but the actual deed and lis pendens images were not reviewed. The [District Clerk civil case-document search](https://hcdistrictclerk.com/eDocs/Public/search.aspx) likewise requires a registered login. Thus no judgment or case papers were examined. The index can omit instruments or misassociate a common name; a title company/attorney must trace all relevant records and review any releases. Do not call Blooming Meadow's lis pendens a tax lien or claim a specific balance from the index.
+
 The listed minimum bids are **not asking prices**. Adjudged or appraised values are **not ARV or equity**. The Tax Office says entries can be removed or canceled before sale and cautions that title, liens, location, and condition require independent diligence. `examples/harris-county-record-signals.json` preserves the observed event and unknown fields; `reports/harris-county-record-signals.json` shows both `REVIEW_REQUIRED`, zero accepted comps and no economics. The engine blocks a `county_record_signal` even if someone later enters a tempting auction figure as an asking price. No outreach, bidding, or offer has occurred.
 
-Next pass: recheck the live sale list immediately before October 6, inspect the relevant recorded instruments and case papers, confirm parcel type/occupancy, then seek a legitimate direct seller channel. Sagecanyon also needs estate authority verification. Only after seller authority, repair scope, verified sold comps, title review, no-capital structure and funded buyer evidence should a lead enter underwriting. A filed notice or tax balance by itself is not a substitute for any of these.
+Next pass: recheck the live sale list immediately before October 6, obtain the indexed instrument images and case papers through authorized access or title counsel, confirm parcel type/occupancy, then seek a legitimate direct seller channel. Sagecanyon needs estate authority verification; Blooming Meadow needs HOA lis pendens and any release reviewed. Only after seller authority, repair scope, verified sold comps, title review, no-capital structure and funded buyer evidence should a lead enter underwriting. A filed notice or tax balance by itself is not a substitute for any of these.
 
 Free-tool preflight: [gboogy/hcad-property-taxes](https://github.com/gboogy/hcad-property-taxes) is a 2020 Selenium scraper without a declared license and does not cover the current official sale/foreclosure workflow. It was reviewed but not installed; the existing direct HCAD GIS reader and official county portals are sufficient for this first research pass.
