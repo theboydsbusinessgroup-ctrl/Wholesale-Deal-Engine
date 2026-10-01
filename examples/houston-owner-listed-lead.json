@@ -1,0 +1,28 @@
+[
+  {
+    "id": "zillow-fsbo-28475010",
+    "address": "13827 Hallfield Dr, Houston, TX 77014",
+    "state": "TX",
+    "county": "Harris",
+    "zip": "77014",
+    "property_type": "single_family",
+    "sqft": 2272,
+    "asking_price": 170000,
+    "parcel_account": "1160050110060",
+    "source": {
+      "url": "https://www.zillow.com/homedetails/13827-Hallfield-Dr-Houston-TX-77014/28475010_zpid/",
+      "observed_at": "2026-10-01"
+    },
+    "seller_channel": "owner_listed_unverified",
+    "listing_status": "for_sale_by_owner",
+    "requires_acquisition": null,
+    "notes": [
+      "Zillow labels the listing For sale by owner and reports a September 19, 2026 listing at $170,000 after a June MLS listing at $200,000. Seller identity and motivation remain unverified.",
+      "Listing says as-is and needs TLC; no inspection or itemized repair budget.",
+      "HCAD parcel query matched account, street and ZIP in 2026 tax roll. Tax-roll identity retained only in ignored local data."
+    ],
+    "assumptions": {},
+    "checks": {},
+    "comps": []
+  }
+]
