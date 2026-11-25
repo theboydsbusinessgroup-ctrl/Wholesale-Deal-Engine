@@ -15,6 +15,8 @@ See examples/houston-public-lead.json. Assumptions must include every COSTS fiel
 
 Accepted comps need id, exact sold_price, sqft, sold_at, status=sold, ZIP, property_type, renovated=true, verified=true and source. Public sold-price ranges may be retained as `comp_candidates` for research but never enter ARV. No asking price can serve as a sold comp. Buyers need id, verified=true, proof_of_funds source object, zips, property_types, max_price and max_repairs.
 
+Subjects require a five-digit ZIP and a nonempty property_type before any comps can qualify. Missing identifiers never count as a match. Malformed comp dates or prices exclude the comp from valuation. Any evidence explicitly marked `verified: false` is rejected even when its URL and observation date are current; omitted verification on a source reference alone is not an attestation of verification.
+
 Checks: ownership, title, flood, assignment_rights, seller_disclosure, buyer_disclosure, counsel_review, contact_eligibility. These are operator attestations with references, not automatic legal determinations. Requires_acquisition must be false; capital_exposure defaults to unknown and must be explicitly supplied. Unknown earnest money or option liabilities cannot be assumed zero.
 
 ## First actual run

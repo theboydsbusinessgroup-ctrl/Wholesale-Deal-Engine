@@ -1,5 +1,6 @@
 """Deterministic research screening. No outreach or transaction execution."""
 import math
+import re
 from datetime import date
 from statistics import median
 from urllib.parse import urlparse
@@ -17,7 +18,7 @@ def number(value, name):
     return value
 
 def sourced(evidence, today, days=30):
-    if not isinstance(evidence, dict):
+    if not isinstance(evidence, dict) or evidence.get('verified') is False:
         return False
     try:
         age = (today - date.fromisoformat(evidence['observed_at'])).days
@@ -39,6 +40,13 @@ def screen(lead, buyers=(), today=None):
         blockers.append('county record is a research signal; direct seller channel and assignable interest unverified')
     if not sourced(lead.get('source'), today):
         blockers.append('missing or stale listing source')
+    zip_code, property_type = lead.get('zip'), lead.get('property_type')
+    valid_zip = isinstance(zip_code, str) and re.fullmatch(r'[0-9]{5}', zip_code) is not None
+    valid_type = isinstance(property_type, str) and bool(property_type.strip())
+    if not valid_zip:
+        blockers.append('missing or invalid five-digit ZIP')
+    if not valid_type:
+        blockers.append('missing property_type')
     for key in ('sqft', 'asking_price'):
         if lead.get(key) is None:
             blockers.append(f'missing {key}')
@@ -66,12 +74,13 @@ def screen(lead, buyers=(), today=None):
             sale_age = (today - date.fromisoformat(c['sold_at'])).days
             good = (c.get('verified') is True and c.get('status') == 'sold'
                     and sourced(c.get('source'), today) and 0 <= sale_age <= 180
-                    and c.get('zip') == lead.get('zip') and c.get('property_type') == lead.get('property_type')
+                    and valid_zip and valid_type
+                    and c.get('zip') == zip_code and c.get('property_type') == property_type
                     and c.get('renovated') is True)
             p, s = number(c['sold_price'], 'sold_price'), number(c['sqft'], 'comp sqft')
             if good and p > 0 and s > 0 and lead.get('sqft') and .75 <= s / lead['sqft'] <= 1.25:
                 comps.append(p / s)
-        except KeyError: continue
+        except (KeyError, ValueError, TypeError): continue
     if len(comps) < 3: blockers.append('need three distinct verified recent renovated sold comps')
     checks = lead.get('checks', {})
     for key in CHECKS:
@@ -101,7 +110,7 @@ def screen(lead, buyers=(), today=None):
     matches = []
     if economics and lead.get('asking_price'):
         for b in buyers:
-            if (b.get('verified') is True and sourced(b.get('proof_of_funds'), today)
+            if (b.get('id') and b.get('verified') is True and sourced(b.get('proof_of_funds'), today)
                 and lead.get('zip') in b.get('zips', []) and lead.get('property_type') in b.get('property_types', [])
                 and number(b.get('max_price',0), 'buyer max price') >= lead['asking_price']+costs['assignment_fee']
                 and number(b.get('max_repairs',0), 'buyer max repairs') >= costs['repairs_high']+costs['repair_contingency']):

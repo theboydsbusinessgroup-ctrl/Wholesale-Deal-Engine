@@ -49,6 +49,33 @@ class EngineTests(unittest.TestCase):
         self.assertIn('county record is a research signal; direct seller channel and assignable interest unverified',r['blockers'])
     def test_missing_data_not_qualified(self):
         self.assertIsNone(screen({'id':'x','address':'x'},today=TODAY)['economics'])
+    def test_missing_subject_identity_cannot_match_missing_comp_and_buyer_fields(self):
+        d=fixture();d['asking_price']=85000
+        for key in ('zip','property_type'):
+            d.pop(key)
+            for comp in d['comps']:comp.pop(key)
+        buyers=[dict(BUYERS[0],zips=[None],property_types=[None])]
+        r=screen(d,buyers,TODAY)
+        self.assertEqual(r['status'],'REVIEW_REQUIRED')
+        self.assertEqual(r['accepted_comp_count'],0)
+        self.assertIsNone(r['economics'])
+    def test_explicitly_disclaimed_evidence_blocks_readiness(self):
+        for key in ('source','repair_evidence','cost_evidence'):
+            d=fixture();d['asking_price']=85000;d[key]['verified']=False
+            self.assertEqual(screen(d,BUYERS,TODAY)['status'],'REVIEW_REQUIRED')
+        buyers=copy.deepcopy(BUYERS);buyers[0]['proof_of_funds']['verified']=False
+        d=fixture();d['asking_price']=85000
+        self.assertEqual(screen(d,buyers,TODAY)['buyer_matches'],[])
+    def test_invalid_comp_dates_and_prices_are_excluded(self):
+        for changes in ({'sold_at':'not a date'},{'sold_at':None},{'sold_price':math.nan},{'sold_price':True}):
+            d=fixture();d['comps'][0].update(changes)
+            r=screen(d,BUYERS,TODAY)
+            self.assertEqual(r['accepted_comp_count'],2)
+            self.assertIsNone(r['economics'])
+    def test_buyer_without_identity_does_not_match(self):
+        buyers=copy.deepcopy(BUYERS);buyers[0].pop('id')
+        d=fixture();d['asking_price']=85000
+        self.assertEqual(screen(d,buyers,TODAY)['buyer_matches'],[])
     def test_duplicate_active_stale_wrong_zip_comps(self):
         for mutation in ({'id':'c0'},{'status':'active'},{'sold_at':'2020-01-01'},{'zip':'99999'}):
             d=fixture();d['comps'][1].update(mutation)
